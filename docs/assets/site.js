@@ -467,7 +467,7 @@ const pageText = {
 
 const storedLanguage = localStorage.getItem('dolphy-language')
 const browserLanguage = (navigator.languages?.[0] || navigator.language || 'en').toLowerCase()
-let language = storedLanguage === 'ru' || storedLanguage === 'en' ? storedLanguage : browserLanguage.startsWith('ru') ? 'ru' : 'en'
+let language = 'en' // English only in this fork
 
 function setLanguage(nextLanguage) {
   language = nextLanguage
@@ -492,7 +492,7 @@ function setLanguage(nextLanguage) {
 }
 
 document.querySelectorAll('[data-language-toggle]').forEach(button => {
-  button.addEventListener('click', () => setLanguage(language === 'ru' ? 'en' : 'ru'))
+  button.hidden = true
 })
 
 document.querySelectorAll('[data-current-year]').forEach(element => {

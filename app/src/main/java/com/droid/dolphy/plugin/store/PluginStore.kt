@@ -36,7 +36,6 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
-import java.util.Locale
 
 
 data class StoreSource(
@@ -63,11 +62,7 @@ data class StorePlugin(
     val translatedDescription: String? = null,
 ) {
     val description: String
-        get() = if (Locale.getDefault().language.equals("ru", true) && descriptionRu.isNotBlank()) {
-            descriptionRu
-        } else {
-            descriptionEn.ifBlank { descriptionRu }
-        }
+        get() = descriptionEn.ifBlank { descriptionRu }
 
     val shortDescription: String
         get() = description.lineSequence().firstOrNull { it.isNotBlank() }?.trim().orEmpty()

@@ -23,11 +23,3 @@ Uses the native batched BLE scanner and loads an embedded DEX class from the sam
 Required permission groups: `bluetooth`, `dex`.
 
 The embedded class is `com.dolphy.examples.ble.BleAnalyzer`. Its readable Java source is available in [`dex-source`](dex-source/com/dolphy/examples/ble/BleAnalyzer.java). The plugin verifies the embedded DEX with SHA-256 before loading it.
-
-## Примеры сканеров
-
-Плагины являются исполняемым пользовательским кодом и могут получать широкий доступ к функциям приложения и устройства. Устанавливайте плагины только из доверенных источников и проверяйте их исходный код. Разработчик Dolphy не несёт ответственности за ущерб, нанесённый вредоносными, изменёнными или недоверенными плагинами.
-
-`Wi-Fi Scanner MD3E` показывает подробности текущего подключения и найденных сетей, включая защиту, диапазон, канал, ширину канала и уровень сигнала.
-
-`BLE Scanner DEX MD3E` сканирует BLE-рекламу, загружает анализатор из встроенного DEX и показывает адрес, RSSI, TX power, сервисы, manufacturer data, тип рекламы и raw payload.

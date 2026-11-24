@@ -128,7 +128,6 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
                             }
                             SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                                 listOf(
-                                    stringResource(R.string.language_russian) to "ru",
                                     "English" to "en",
                                 ).forEachIndexed { index, (label, language) ->
                                     SegmentedButton(
@@ -137,7 +136,7 @@ fun SettingsScreen(spamViewModel: SpamViewModel, dolphyViewModel: DolphyViewMode
                                             spamViewModel.setAppLanguage(language)
                                             applyInAppLocale(context)
                                         },
-                                        shape = SegmentedButtonDefaults.itemShape(index, 2),
+                                        shape = SegmentedButtonDefaults.itemShape(index, 1),
                                         label = { Text(label) },
                                     )
                                 }

@@ -9,9 +9,8 @@ object AppLocale {
     fun getString(context: Context, id: Int, vararg args: Any): String = wrap(context).getString(id, *args)
 
     fun wrap(context: Context): Context {
-        val prefs = context.getSharedPreferences("DolphyPrefs", Context.MODE_PRIVATE)
-        val language = prefs.getString("app_language", "ru") ?: "ru"
-        val locale = Locale.forLanguageTag(if (language == "en") "en" else "ru")
+        // UI is always English in this fork (no Cyrillic display).
+        val locale = Locale.forLanguageTag("en")
         Locale.setDefault(locale)
 
         val config = Configuration(context.resources.configuration)

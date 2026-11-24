@@ -1,5 +1,5 @@
 DELAY 200
-REM Перебор всех четырехзначных комбинаций
+REM Brute-force all 4-digit combinations
 STRING 0000
 ENTER
 DELAY 200
